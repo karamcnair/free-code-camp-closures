@@ -1,0 +1,41 @@
+var Person = function(firstAndLast) {
+
+    this.getFullName = function() {
+        return (firstAndLast);
+    };
+
+    this.getFirstName = function() {
+      return this.getFullName().split(" ")[0];
+    };
+  
+    this.getLastName = function() {
+      return this.getFullName().split(" ")[this.getFullName().split(" ").length-1];
+    };
+  
+     this.setFirstName = function(first) {
+      this.getFirstName = function() {
+        return(first);
+      };
+   };
+
+    this.setLastName = function(last) {
+      this.getLastName = function() {
+        return(last);
+      };    
+    };
+
+    this.setFullName = function(firstAndLast) {
+      this.getFullName = function() {
+        return (firstAndLast);
+      };
+    };
+  
+
+      return firstAndLast;
+
+};
+
+
+var bob = new Person('Bob Ross');
+var list = new Person('Bob Ross');
+bob.getFullName();
